@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+	<title>Realtime Timer</title>
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body>
+	<div id="controls"></div>
+	<div id="timer">
+		00:00
+	</div>
+
+	<script src="http://code.xrtml.org/xrtml-3.2.0.js"></script>
+      <script src="js/timer.js"></script>
+	<script>
+	    Timer({
+            debug: true, // sets debug to true so we can see what's going on with Realtime and our connection to the ORTC servers, message flow, etc.
+            ORTCAppKey: 'YOUR_APP_KEY', // the ORTC Application Key. Get yours at www.realtime.co
+            ORTCAuthToken: 'anything', // the ORTC authentication token
+            ORTCUrl: 'http://ortc-developers.realtime.co/server/2.1', // the ORTC server URL
+            ORTCChannel: 'timer', // the ORTC channel to send the messages to
+            timerFrom: 5, // the first value for the dropdown that controls the total time (in minutes)
+            timerTo: 60, // the last value for the dropdown that controls the total time (in minutes)
+            timerInterval: 5, // the interval between time values (in minutes)
+            showControls: true, // indicates if it should show the controls; this should be true for the master browser - you should have 1 page with this turned on
+            controlsContainer: 'controls', // the DOM element id where the controls should be added
+            timerContainer: 'timer', // the DOM element id where the timer should be added
+            timerSetButtonText: 'Set timer', // the text to display on the button that sets the time
+            timerGoButtonText: 'Start countdown' // the text to display on the button that starts the countdown
+	    });
+	</script>
+</body>
+</html>
